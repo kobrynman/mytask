@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'task'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,13 +56,29 @@ WSGI_APPLICATION = 'mytask.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'task_base',
     }
 }
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'task_base',
+        'USER': 'root',
+        'PASSWORD': '3263',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
