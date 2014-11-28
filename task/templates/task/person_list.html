@@ -16,15 +16,15 @@
       {% if person_list %}
       {% for person in person_list %}
       <tr>
-          <td><a href="{% url 'personSelect' person.id %}">{{person.name}}</a></td>
-          <td>{{person.last_name}}</td>
-          <td>{{person.phone}}</td>
+          <td><a href="{% url 'person_select' person.id %}">{{person.name}}</a></td>
+          <td><a href="{% url 'person_select' person.id %}">{{person.last_name}}</a></td>
+          <td><a href="{% url 'person_select' person.id %}">{{person.phone}}</a></td>
       </tr>
       {% endfor %}
       {% endif %}
   </table>
 
-  <form action="/addperson/">
+  <form action="/newperson/">
       <button type="submit">Добавити</button>
   </form>
 </body>

@@ -5,13 +5,7 @@
     <title></title>
 </head>
 <body>
-<form method="post" action="">
-    {{ formset }}
-</form>
-{{person.name}}
-{{person.last_name}}
-{{person.phone}}
-    <form action="{% url 'update_person' person.id %}" method="post" name="update">
+    <form action="" method="post">
     {% csrf_token %}
         {{ form.non_field_errors }}
         <div>
@@ -29,8 +23,7 @@
             <label>Мобільний: </label>
             {{ form.phone }}
         </div>
-        <p><input type="submit" value="Редагувати" /></p>
+        <p><input type="submit" value="Додати" /></p>
     </form>
-    <p><a href="{% url 'delete_person' person.id %}">Видалити</a></p>
 </body>
 </html>

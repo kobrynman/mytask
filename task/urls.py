@@ -5,6 +5,9 @@ from task import views
 
 urlpatterns = patterns('',
     url(r'^personlist/$', views.person_list, name='person_list'),
-    url(r'^personlist/(?P<person_id>\d+)/$', views.person_select, name='personSelect'),
-    #url(r'^addperson/$', views.add_person, name='add_person'),
+    url(r'^newperson/$', views.new_person, name='new_person'),
+    url(r'^personlist/(?P<person_id>\d+)/$', views.person_select, name='person_select'),
+    url(r'^personlist/(?P<person_id>\d+)/update$', views.update_person, name='update_person'),
+    url(r'^personlist/(?P<person_id>\d+)/delete$', views.delete_person, name='delete_person'),
+
 )
