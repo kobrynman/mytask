@@ -42,6 +42,8 @@ def update_person(request, person_id):
     return render(request, 'task/person_select.html', context)
 
 def delete_person(request, person_id):
+    person = Person.objects.get(pk=person_id)
+    person.delete()
     return HttpResponseRedirect('/personlist/')
 
 
