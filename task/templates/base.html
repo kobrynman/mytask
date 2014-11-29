@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>{% block title %}Головна{% endblock %}</title>
+        <script src="/static/media/js/jquery.js" language="javascript" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
+        <script src="/static/bootstrap/js/bootstrap.js"></script>
+        <link href="/static/taximanager/css/newride.css" rel="stylesheet">
+    {% block script %}{% endblock %}
 </head>
-<body>
-
-</body>
+    <body>
+        <div class="container">
+            <div class="navbar  navbar-static-top">
+                <nav class="navbar-inner" >
+                    <a class="brand"> Task </a>
+                    <ul class="nav">
+                        <li class="divider-vertical"> </li>
+                        <li><a href="/personlist/"> <i class="icon-home"></i> Home  </a></li>
+                    </ul>
+                </nav>
+            </div>
+       {% block content %} {% endblock %}
+      </div>
+    </body>
 </html>

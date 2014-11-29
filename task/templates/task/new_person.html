@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <form action="" method="post">
+{% extends "base.html" %}
+
+{% block title %}New person{% endblock %}
+
+{% block content %}
+    <h2>New person</h2>
+    <form method="post">
     {% csrf_token %}
         {{ form.non_field_errors }}
-        <div>
+        <div class="form-group">
             {{ form.name.errors }}
             <label>Name: </label>
             {{ form.name }}
         </div>
-        <div>
+        <div class="form-group">
             {{ form.last_name.errors }}
             <label>Last name: </label>
             {{ form.last_name }}
         </div>
-        <div>
+        <div class="form-group">
             {{ form.phone.errors }}
             <label>Phone: </label>
             {{ form.phone }}
         </div>
-        <p><input type="submit" value="Додати" /></p>
+        <p><input type="submit" class="btn btn-default" value="Save" /></p>
     </form>
-</body>
-</html>
+
+{% endblock %}
