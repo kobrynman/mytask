@@ -1,5 +1,8 @@
+import json
+
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 
 from task.forms import PersonForm
 from task.models import Person
@@ -47,6 +50,32 @@ def delete_person(request, person_id):
     return HttpResponseRedirect('/personlist/')
 
 
+@csrf_exempt
+def update_data(request):
+    person_list_all = Person.objects.all()
+    a = []
+    for sel in person_list_all:
+        temp = {"name": sel.name,"last_name": sel.last_name,"phone": sel.phone, "id": sel.id}
+        a.append(temp)
+    return HttpResponse(json.dumps(a, separators=(',',':')),
+                        content_type="application/json"
+    )
+
+    try:
+        poll = Poll.objects.get(pk=poll_id)
+    except Poll.DoesNotExist:
+        raise Http404
+    return render(request, 'polls/detail.html', {'poll': poll})
 
 
-
+@csrf_exempt
+def find_by_phone(request):
+    post_text = request.POST.get('phone')
+    try:
+        person = Person.objects.get(phone=post_text)
+        my_person = {"name": person.name}
+    except :
+        my_person = {"name": "not found"}
+    return HttpResponse(json.dumps(my_person, separators=(',',':')),
+                        content_type="application/json"
+    )

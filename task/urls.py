@@ -10,4 +10,6 @@ urlpatterns = patterns('',
     url(r'^personlist/(?P<person_id>\d+)/update$', views.update_person, name='update_person'),
     url(r'^personlist/(?P<person_id>\d+)/delete$', views.delete_person, name='delete_person'),
 
+    url(r'^updatedata/', views.update_data, name='update_data'),
+    url(r'^findbyphone/', views.find_by_phone, name='find_by_phone'),
 )

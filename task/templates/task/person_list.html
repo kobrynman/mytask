@@ -4,13 +4,20 @@
 
 {% block script %}
     <link href="/static/media/css/jquery.dataTables.css" type="text/css" rel="stylesheet">
-    <script src="/static/taximanager/js/post.js" language="javascript" type="text/javascript"></script>
+    <link href="/static/task/css/style.css" type="text/css" rel="stylesheet">
+    <script src="/static/task/js/jquery-1.11.1.js" type="text/javascript" language="javascript"></script>
     <script src="/static/media/js/jquery.dataTables.js" language="javascript" type="text/javascript"></script>
     <script src="/static/task/js/dataTable.js" type="text/javascript" language="javascript"></script>
+    <script src="/static/task/js/updateTable.js" type="text/javascript" language="javascript"></script>
+
+
+
+
 {% endblock %}
 
 {% block content %}
-  <h2>Table of persons</h2>
+  <h2 style="float:left;">Table of persons</h2>
+  <div onclick="updateData();" class="btnUpdate"></div>
   <table id="example" class="table table-hover table-bordered"  cellspacing="0" width="100%">
       <thead>
           <tr>

@@ -7,7 +7,6 @@
         <script src="/static/media/js/jquery.js" language="javascript" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css">
         <script src="/static/bootstrap/js/bootstrap.js"></script>
-        <link href="/static/taximanager/css/newride.css" rel="stylesheet">
     {% block script %}{% endblock %}
 </head>
     <body>
@@ -19,6 +18,12 @@
                         <li class="divider-vertical"> </li>
                         <li><a href="/personlist/"> <i class="icon-home"></i> Home  </a></li>
                     </ul>
+                    <div class="navbar-form pull-right" >
+                        <ul class="nav nav-pills">
+                            <li > <input onkeydown="resetBorder()" style="margin-right:5px" id="phone" type="text" class="span2"></li>
+                            <li><button onclick="findByPhone();" class="btn">Find by phone</button></li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
        {% block content %} {% endblock %}
